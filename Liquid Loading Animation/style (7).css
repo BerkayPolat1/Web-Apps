@@ -1,0 +1,64 @@
+:root {
+  --primary: #25abd9;
+  --background: #eee;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    align-items: center;
+    background: var(--background);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.circle {
+    border: solid 4px var(--primary);
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-color: var(--primary);
+    overflow: hidden;
+}
+
+.circle::after {
+    background-color: var(--background);
+    content: '';
+    height: 150%;
+    width: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20%;
+    position: absolute;
+    animation: liquid 10s ease-in-out forwards;
+}
+
+.cirlce__icon {
+    color: var(--background);
+    font-size: 70px;
+}
+
+
+/* Keyframes */
+
+@keyframes liquid {
+    0% {
+        transform: translate(-50%, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -100%) rotate(500deg);
+    }
+}
